@@ -2,6 +2,9 @@ const Data = require('./data');
 const { log } = require('./logger');
 const Tester = require('./tester');
 
+const { LOR_IO_USERS }  = require('./const');
+
+
 /*--- Helper ---*/
 const getRandomInt = (max) => Math.floor(Math.random() * max)
 
@@ -31,12 +34,17 @@ const main = async () => {
 
   log(0, 'index.js', 'Running tests');
   const dayOfBooking = getRandomDateInFuture();
+  const startDay = new Date(today).setDate(today.getDate());
+  const endDay = nextWeekToday;
+  const startTime = 8;
+  const endTime = 17;
   const from = dateAtHour(dayOfBooking, 12);
   const until = dateAtHour(dayOfBooking, 16);
-  const actions = randomActions();
-  await Data.fetchBookings(today.getTime(), dayNextMonth);
+  const actions = Array(50).fill('create'); // randomActions();
+  const users = LOR_IO_USERS;
+  // await Data.fetchBookings(today.getTime(), dayNextMonth);
   try{ 
-    await new Tester(from, until, actions, Data.userBookings, Data.bookableZones).run();
+    await new Tester(startDay, endDay, startTime, endTime, actions, [], Data.bookableZones, users).run();
   } catch(e) {
     console.log(e);
     log(2, 'index.js', `Encoutered an error when running actions ${actions} from ${from} until ${until}`)

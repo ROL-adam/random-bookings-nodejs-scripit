@@ -1,5 +1,5 @@
 const axios = require('axios');
-const { RIO_API_USER, RIO_API_USER_PASSWORD, COMPANY_ID }  = require('./const');
+const { LOR_IO_USERS, RIO_API_USER, RIO_API_USER_PASSWORD, COMPANY_ID }  = require('./const');
 
 const baseUrl = 'https://dev-api.riocompanion.com'
 const coreClient = axios.create({
@@ -8,8 +8,8 @@ const coreClient = axios.create({
 coreClient.interceptors.request.use((config) => {
   const headers = {
     'idesk-auth-method': 'up',
-    'idesk-auth-username': RIO_API_USER,
-    'idesk-auth-password': RIO_API_USER_PASSWORD,
+    'idesk-auth-username': LOR_IO_USERS[0].email,
+    'idesk-auth-password': LOR_IO_USERS[0].password,
     Accept: 'application/vnd.idesk-v5+json',
     'Content-Type': 'application/vnd.idesk-v5+json',
   };

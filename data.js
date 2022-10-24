@@ -19,6 +19,7 @@ class Data{
     log(0, 'data.js', `fetching zones for company with ${COMPANY_ID}`);
     const { data: zones } = await getCompanyZones(COMPANY_ID);
     this.bookableZones = zones.filter((zone) => zone.Bookable);
+    this.bookableZones = zones.filter((zone) => zone.Type !== 'LOCK');
   }
 
   async fetchBookings(from, until){
