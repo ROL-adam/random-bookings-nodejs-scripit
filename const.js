@@ -1,0 +1,5 @@
+const COMPANY_ID = 5729825717223424;
+const RIO_API_USER = "adam-test-mars22@riocompanion.com";
+const RIO_API_USER_PASSWORD = "507fc8e19ee9dfa90079c3ca514178dfb12e591b469a48348539f515178a199a";
+
+module.exports = {COMPANY_ID, RIO_API_USER, RIO_API_USER_PASSWORD}
