@@ -33,13 +33,13 @@ const main = async () => {
   await Data.fetchZones();
 
   log(0, 'index.js', 'Running tests');
-  const dayOfBooking = getRandomDateInFuture();
+  // const dayOfBooking = getRandomDateInFuture();
   const startDay = new Date(today).setDate(today.getDate());
   const endDay = nextWeekToday;
   const startTime = 8;
   const endTime = 17;
-  const from = dateAtHour(dayOfBooking, 12);
-  const until = dateAtHour(dayOfBooking, 16);
+  // const from = dateAtHour(dayOfBooking, 12);
+  // const until = dateAtHour(dayOfBooking, 16);
   const actions = Array(50).fill('create'); // randomActions();
   const users = LOR_IO_USERS;
   // await Data.fetchBookings(today.getTime(), dayNextMonth);
