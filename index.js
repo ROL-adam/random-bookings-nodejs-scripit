@@ -2,7 +2,7 @@ const Data = require('./data');
 const { log } = require('./logger');
 const Tester = require('./tester');
 
-const { LOR_IO_USERS }  = require('./const');
+const { USERS }  = require('./const');
 
 
 /*--- Helper ---*/
@@ -41,7 +41,7 @@ const main = async () => {
   // const from = dateAtHour(dayOfBooking, 12);
   // const until = dateAtHour(dayOfBooking, 16);
   const actions = Array(50).fill('create'); // randomActions();
-  const users = LOR_IO_USERS;
+  const users = USERS;
   // await Data.fetchBookings(today.getTime(), dayNextMonth);
   try{ 
     await new Tester(startDay, endDay, startTime, endTime, actions, [], Data.bookableZones, users).run();

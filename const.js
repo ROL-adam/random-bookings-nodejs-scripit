@@ -1,6 +1,6 @@
 const COMPANY_ID = 5172975993094144;
 
-const LOR_IO_USERS = [
+const USERS = [
   {
     email: "thore.hills@lor.io.com",
     password: "fb1b82de0e5fcfa676e06ecf2110db56704bdd80c32159781b6deba124edbf49",
@@ -43,4 +43,4 @@ const LOR_IO_USERS = [
 const RIO_API_USER = "adam-test-mars22@riocompanion.com";
 const RIO_API_USER_PASSWORD = "507fc8e19ee9dfa90079c3ca514178dfb12e591b469a48348539f515178a199a";
 
-module.exports = {COMPANY_ID, RIO_API_USER, RIO_API_USER_PASSWORD, LOR_IO_USERS}
+module.exports = {COMPANY_ID, RIO_API_USER, RIO_API_USER_PASSWORD, USERS}
